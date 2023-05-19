@@ -44,13 +44,27 @@ const questions = [
     message: 'Enter testing details:',
   },
   
+  //adding an option to select license choices
+  {
+    //data type 'list' allows choice selection
+    type: 'list',
+    name: 'license',
+    message: 'Choose a license for your application:',
+    choices: [
+      //randomly chosen licenses
+      'MIT License',
+      'Apache License 2.0',
+      'GNU GPLv3',
+      'ISC License',
+    ],
+  },
 ];
 
 //initiate questions prompt function
 prompt(questions)
   .then((answers) => {
     //answers reference
-    const { title, description, installation, usage, contributing, test } = answers;
+    const { title, description, installation, usage, contributing, test, license } = answers;
 
 //adding table of contents var for README content
 const tableOfContents = `
@@ -79,6 +93,7 @@ ${installation}
 ${usage}
 
 ## License
+${license}
 
 
 ## Contributing
