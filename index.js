@@ -14,7 +14,35 @@ const questions = [
     message: 'Enter the title of your project:',
   },
 
+  {
+    type: 'input',
+    name: 'description',
+    message: 'Enter a description of your project:',
+  },
 
+  {
+    type: 'input',
+    name: 'installation',
+    message: 'Enter the installation steps for your project:',
+  },
+
+  {
+    type: 'input',
+    name: 'usage',
+    message: 'Enter the purpose of your project:',
+  },
+
+  {
+    type: 'input',
+    name: 'contributing',
+    message: 'Enter the contibuters:',
+  },
+
+  {
+    type: 'input',
+    name: 'test',
+    message: 'Enter testing details:',
+  },
   
 ];
 
@@ -22,7 +50,7 @@ const questions = [
 prompt(questions)
   .then((answers) => {
     //answers reference
-    const { title, description, installation, usage, contributing, issues, license } = answers;
+    const { title, description, installation, usage, contributing, test } = answers;
 
 //README content
 const readmeContent = `
@@ -32,6 +60,7 @@ const readmeContent = `
 ${description}
 
 ## Table of Contents
+
 
 ## Installation
 ${installation}
@@ -46,7 +75,7 @@ ${usage}
 ${contributing}
 
 ## Tests
-${tests}
+${test}
 
 ## Questions
 
