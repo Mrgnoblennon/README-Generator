@@ -11,7 +11,7 @@ const questions = [
     //variable reference
     name: 'title',
     //command line text
-    message: 'Enter the title of your project:',
+    message: 'Enter the title of your project. This will also be the name of the newly created document:',
   },
 
   {
@@ -29,19 +29,19 @@ const questions = [
   {
     type: 'input',
     name: 'usage',
-    message: 'Enter the purpose of your project:',
+    message: 'Enter the usage of your project:',
   },
 
   {
     type: 'input',
     name: 'contributing',
-    message: 'Enter the contibuters:',
+    message: 'Enter the contibuters of the project:',
   },
 
   {
     type: 'input',
     name: 'test',
-    message: 'Enter testing details:',
+    message: 'Enter any testing details:',
   },
   
   //adding an option to select license choices
@@ -124,7 +124,7 @@ Email: ${email}
 `;
     
 //write the README content to a file named Test.md
-fs.writeFile('Test.md', readmeContent, (err) => {
+fs.writeFile( `${title}` + '.md', readmeContent, (err) => {
   if (err) {
     console.error('Error creating README file:', err);
   } else {
