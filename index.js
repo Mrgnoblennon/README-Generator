@@ -58,13 +58,25 @@ const questions = [
       'ISC License',
     ],
   },
+
+  {
+    type: 'input',
+    name: 'github',
+    message: 'Enter your GitHub username:',
+  },
+
+  {
+    type: 'input',
+    name: 'email',
+    message: 'Enter your email address:',
+  },
 ];
 
 //initiate questions prompt function
 prompt(questions)
   .then((answers) => {
     //answers reference
-    const { title, description, installation, usage, contributing, test, license } = answers;
+    const { title, description, installation, usage, contributing, test, license, github, email } = answers;
 
 //adding table of contents var for README content
 const tableOfContents = `
@@ -103,11 +115,16 @@ ${contributing}
 ${test}
 
 ## Questions
+If you have any questions, feel free to reach out to me:
+
+GitHub: [${github}](https://github.com/${github})
+
+Email: ${email}
 
 `;
     
-//write the README content to a file named README.md
-fs.writeFile('README.md', readmeContent, (err) => {
+//write the README content to a file named Test.md
+fs.writeFile('Test.md', readmeContent, (err) => {
   if (err) {
     console.error('Error creating README file:', err);
   } else {
