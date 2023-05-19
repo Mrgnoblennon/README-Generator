@@ -52,6 +52,16 @@ prompt(questions)
     //answers reference
     const { title, description, installation, usage, contributing, test } = answers;
 
+//adding table of contents var for README content
+const tableOfContents = `
+  ## Table of Contents
+  - [Installation](#installation)
+  - [Usage](#usage)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions](#questions)
+  `;
+
 //README content
 const readmeContent = `
 # ${title}
@@ -59,7 +69,7 @@ const readmeContent = `
 ## Description
 ${description}
 
-## Table of Contents
+## ${tableOfContents}
 
 
 ## Installation
